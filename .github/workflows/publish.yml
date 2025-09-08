@@ -31,6 +31,7 @@ jobs:
           echo "docker_image=rvolykh/helloworld-mcp-$project" | tee -a $GITHUB_OUTPUT
 
       - name: Build and push Docker image
+        if: ${{ hashFiles(format('{0}/Dockerfile', steps.docker-tag.outputs.project)) != '' }}
         uses: docker/build-push-action@v5
         with:
           context: ${{ steps.docker-tag.outputs.project }}

@@ -6,6 +6,14 @@ Training repo
 
 - [math](https://hub.docker.com/r/rvolykh/helloworld-mcp-math)
 
+# Test MCP
+
+```shell
+npx @modelcontextprotocol/inspector
+```
+
+MCP Server URL: http://localhost:8080
+
 ## CI Configuration
 
 The following secrets are required:
