@@ -4,16 +4,16 @@
   "tag-separator": "/",
   "separate-pull-requests": false,
   "packages": {
-    "shared": {
-        "path": "shared",
+    "./shared": {
+        "package-name": "shared",
         "release-type": "go"
     },
-    "math": {
-        "path": "math",
+    "./math": {
+        "package-name": "math",
         "release-type": "go"
     },
-    "strings": {
-        "path": "strings",
+    "./strings": {
+        "package-name": "strings",
         "release-type": "go"
     }
   },
