@@ -28,7 +28,7 @@ jobs:
 
           echo "version=$version" >> $GITHUB_OUTPUT
           echo "project=$project" >> $GITHUB_OUTPUT
-          echo "docker_image=rvolykh/helloworld-mcp-$project" >> $GITHUB_OUTPUT"
+          echo "docker_image=rvolykh/helloworld-mcp-$project" >> $GITHUB_OUTPUT
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
