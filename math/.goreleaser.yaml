@@ -1,5 +1,0 @@
-project_name: math
-
-monorepo:
-  tag_prefix: math/
-  dir: math
