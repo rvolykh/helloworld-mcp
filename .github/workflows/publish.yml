@@ -23,8 +23,8 @@ jobs:
           TAG: ${{ github.ref_name }}
         id: docker-tag
         run: |
-          version=${TAG##*@}
-          project=${TAG%@*}
+          version=${TAG##*/}
+          project=${TAG%/*}
 
           echo "version=$version" | tee -a $GITHUB_OUTPUT
           echo "project=$project" | tee -a $GITHUB_OUTPUT
