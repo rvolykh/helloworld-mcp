@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/rvolykh/helloworld-mcp/compare/strings/v0.1.0...strings/v0.1.1) (2025-09-09)
+
+
+### Bug Fixes
+
+* Multi-platform docker image ([51a4280](https://github.com/rvolykh/helloworld-mcp/commit/51a4280675308daad87bfcee94dc2f1d827a1351))
+
 ## [0.1.0](https://github.com/rvolykh/helloworld-mcp/compare/strings/v0.0.1...strings/v0.1.0) (2025-09-08)
 
 
