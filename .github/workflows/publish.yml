@@ -18,6 +18,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_LOGIN }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Prepare tag value
         env:
           TAG: ${{ github.ref_name }}
@@ -32,8 +38,9 @@ jobs:
 
       - name: Build and push Docker image
         if: ${{ hashFiles(format('{0}/Dockerfile', steps.docker-tag.outputs.project)) != '' }}
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ${{ steps.docker-tag.outputs.project }}
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: "${{ steps.docker-tag.outputs.docker_image }}:${{ steps.docker-tag.outputs.version }},${{ steps.docker-tag.outputs.docker_image }}:latest"
