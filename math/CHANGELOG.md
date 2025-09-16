@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/rvolykh/helloworld-mcp/compare/math/v0.2.0...math/v0.2.1) (2025-09-16)
+
+
+### Bug Fixes
+
+* [math] Resolve math runtime error ([b3a9f46](https://github.com/rvolykh/helloworld-mcp/commit/b3a9f469aa71159e7794b76e79ab5fd3fc865e3d))
+
 ## [0.2.0](https://github.com/rvolykh/helloworld-mcp/compare/math/v0.1.1...math/v0.2.0) (2025-09-16)
 
 

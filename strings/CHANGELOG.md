@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/rvolykh/helloworld-mcp/compare/strings/v0.2.0...strings/v0.2.1) (2025-09-16)
+
+
+### Bug Fixes
+
+* [strings] Bump shared package ([0597fcd](https://github.com/rvolykh/helloworld-mcp/commit/0597fcd2f7287cab19cb82ccf7fd35426235e86c))
+
 ## [0.2.0](https://github.com/rvolykh/helloworld-mcp/compare/strings/v0.1.1...strings/v0.2.0) (2025-09-16)
 
 
