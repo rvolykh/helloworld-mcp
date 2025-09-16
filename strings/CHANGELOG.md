@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/rvolykh/helloworld-mcp/compare/strings/v0.1.1...strings/v0.2.0) (2025-09-16)
+
+
+### Features
+
+* [strings] Add more strings functions ([b0bcf68](https://github.com/rvolykh/helloworld-mcp/commit/b0bcf68aad53ba34e7ccd736d0f66e70d77b68a7))
+
 ## [0.1.1](https://github.com/rvolykh/helloworld-mcp/compare/strings/v0.1.0...strings/v0.1.1) (2025-09-09)
 
 
