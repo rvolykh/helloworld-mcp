@@ -4,7 +4,7 @@ go 1.25.1
 
 require (
 	github.com/modelcontextprotocol/go-sdk v0.5.0
-	github.com/rvolykh/helloworld-mcp/shared v0.2.0
+	github.com/rvolykh/helloworld-mcp/shared v1.0.0
 )
 
 require (
