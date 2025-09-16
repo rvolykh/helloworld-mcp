@@ -9,13 +9,13 @@ import (
 	"os"
 
 	"github.com/modelcontextprotocol/go-sdk/mcp"
-	"github.com/rvolykh/helloworld-mcp/math/middleware"
 	"github.com/rvolykh/helloworld-mcp/math/tools"
+	"github.com/rvolykh/helloworld-mcp/shared/middleware"
 )
 
 var (
-	host  = flag.String("host", "localhost", "host to connect to/listen on")
-	port  = flag.Int("port", 8080, "port number to connect to/listen on")
+	host = flag.String("host", "localhost", "host to connect to/listen on")
+	port = flag.Int("port", 8080, "port number to connect to/listen on")
 )
 
 func main() {
@@ -36,11 +36,31 @@ func main() {
 	// Create a server with tools.
 	server := mcp.NewServer(&mcp.Implementation{Name: "math", Version: "v1.0.0"}, nil)
 
-	mcp.AddTool(server, &mcp.Tool{
-		Name: "Max",
-		Description: tools.MaxDescription,
-
-	}, WrapMathTool(tools.Max))
+	tools := map[string][]any{
+		"Max":   {tools.MaxDescription, tools.Max},
+		"Min":   {tools.MinDescription, tools.Min},
+		"Abs":   {tools.AbsDescription, tools.Abs},
+		"Sqrt":  {tools.SqrtDescription, tools.Sqrt},
+		"Pow":   {tools.PowDescription, tools.Pow},
+		"Sin":   {tools.SinDescription, tools.Sin},
+		"Cos":   {tools.CosDescription, tools.Cos},
+		"Tan":   {tools.TanDescription, tools.Tan},
+		"Log":   {tools.LogDescription, tools.Log},
+		"Log10": {tools.Log10Description, tools.Log10},
+		"Exp":   {tools.ExpDescription, tools.Exp},
+		"Round": {tools.RoundDescription, tools.Round},
+		"Trunc": {tools.TruncDescription, tools.Trunc},
+		"Mod":   {tools.ModDescription, tools.Mod},
+		"Hypot": {tools.HypotDescription, tools.Hypot},
+		"Floor": {tools.FloorDescription, tools.Floor},
+		"Ceil":  {tools.CeilDescription, tools.Ceil},
+	}
+	for name, tool := range tools {
+		mcp.AddTool(server, &mcp.Tool{
+			Name:        name,
+			Description: tool[0].(string),
+		}, WrapMathTool(tool[1].(func(context.Context, any) (any, error))))
+	}
 
 	// Run the server over HTTP
 	handler := mcp.NewStreamableHTTPHandler(func(req *http.Request) *mcp.Server {
@@ -56,10 +76,10 @@ func main() {
 }
 
 func WrapMathTool[I any, O any](
-	toolFunc func(context.Context, I)(O, error),
-	) func(context.Context, *mcp.CallToolRequest, I)(*mcp.CallToolResult, O, error) {
+	toolFunc func(context.Context, I) (O, error),
+) func(context.Context, *mcp.CallToolRequest, I) (*mcp.CallToolResult, O, error) {
 
-	return func(ctx context.Context, _ *mcp.CallToolRequest, i I)(*mcp.CallToolResult, O, error) {
+	return func(ctx context.Context, _ *mcp.CallToolRequest, i I) (*mcp.CallToolResult, O, error) {
 		o, err := toolFunc(ctx, i)
 		return nil, o, err
 	}
