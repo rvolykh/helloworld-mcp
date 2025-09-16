@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/rvolykh/helloworld-mcp/compare/shared/v0.1.0...shared/v0.2.0) (2025-09-16)
+
+
+### Features
+
+* [shared] Add wrapper/tools.go with WrapMathTool func ([b2007d8](https://github.com/rvolykh/helloworld-mcp/commit/b2007d8061f4076e677ddd728c0820e4fab3b8f4))
+
 ## [0.1.0](https://github.com/rvolykh/helloworld-mcp/compare/shared/v0.0.1...shared/v0.1.0) (2025-09-08)
 
 
