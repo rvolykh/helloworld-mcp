@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/rvolykh/helloworld-mcp/compare/math/v0.1.1...math/v0.2.0) (2025-09-16)
+
+
+### Features
+
+* [math] Add more math functions ([0e670dc](https://github.com/rvolykh/helloworld-mcp/commit/0e670dcd8c0cb43986c25455dcfea9a9ce232bba))
+
 ## [0.1.1](https://github.com/rvolykh/helloworld-mcp/compare/math/v0.1.0...math/v0.1.1) (2025-09-09)
 
 
