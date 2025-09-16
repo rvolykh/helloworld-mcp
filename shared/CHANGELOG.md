@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/rvolykh/helloworld-mcp/compare/shared/v0.2.0...shared/v1.0.0) (2025-09-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* [shared] Rename wrapper/tools function
+
+### Features
+
+* [shared] Rename wrapper/tools function ([4fa2024](https://github.com/rvolykh/helloworld-mcp/commit/4fa202454d2061d656923d602948eaea25d088b6))
+
 ## [0.2.0](https://github.com/rvolykh/helloworld-mcp/compare/shared/v0.1.0...shared/v0.2.0) (2025-09-16)
 
 
